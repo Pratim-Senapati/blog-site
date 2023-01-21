@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog For All</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@600&display=swap" rel="stylesheet">
+</head>
+<style>
+    .main {
+        padding: 5px 25px;
+        display: grid;
+        grid-template-areas:
+            'nav '
+            'bod '
+            'ftr ';
+    }
+
+    .parts {
+
+        background-color: rgb(214, 227, 223);
+        /* border: 3px solid red; */
+        margin: 5px;
+        text-align: left;
+        padding: 8px;
+        /* max-width: 100vw; */
+        border-radius: 10px;
+
+    }
+
+    .navb {
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr 1fr;
+        padding: 0px 23px;
+
+    }
+
+    .shad1 {
+        box-shadow: 5px 3px 7px royalblue;
+    }
+
+    .shad2 {
+        box-shadow: 5px 0px 7px royalblue;
+    }
+
+    .body {
+        width: 100%;
+        display: flex;
+    }
+
+    @media only screen and (min-width:1065.1px) {
+        .body {
+            width: 100%;
+        }
+
+        /* .parts {
+            width: 100%;
+        } */
+
+        #footer {
+            width: 95%;
+        }
+    }
+
+    @media only screen and (min-width:840.1px) and (max-width:1065px) {
+        #asider {
+            display: none;
+        }
+
+        #asidel {
+            width: 20%;
+        }
+
+        .body {
+            width: 124%;
+        }
+
+        /* .parts {
+            width: 100%;
+        } */
+    }
+
+    @media only screen and (max-width:840px) {
+        #asidel {
+            display: none;
+        }
+
+        #asider {
+            display: none;
+        }
+
+        .body {
+            width: 166%;
+        }
+
+        /* .parts {
+            width: 100%;
+        } */
+    }
+
+    .nav {
+        border: none;
+        padding: 3px 7px;
+
+    }
+
+
+    a {
+        text-decoration: none;
+        color: black;
+        font-size: 1.2rem;
+
+    }
+
+    p {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* a:hover {
+        text-decoration: underline;
+        color: brown;
+        font-size: 1.3em;
+    } */
+
+    /* #sup:hover {
+        background-color: blue;
+        text-decoration: underline;
+        color: brown;
+
+    } */
+    .link {
+        margin: 3px 10px;
+        padding: 3px;
+    }
+
+    .link:hover {
+        color: rgb(147, 18, 18) !important;
+        text-decoration: underline;
+
+    }
+
+    /* .Linke {
+        margin: 3px 10px;
+        padding: 3px;
+    }
+
+    .Linke:hover {
+        color: rgb(147, 18, 18);
+        text-decoration: underline;
+    } */
+
+    a:active {
+        font-weight: 1000;
+    }
+
+    #sup {
+        box-sizing: border-box;
+        border: 2px solid blue;
+        width: 100px;
+        height: 30px;
+        margin: 5px auto;
+        text-align: center;
+
+    }
+
+    /* #sup:hover {
+        background-color: blue;
+        font-weight: 1000;
+    } */
+
+    #lin {
+        box-sizing: border-box;
+        border: 2px solid none;
+        width: 100px;
+        height: 30px;
+        margin: 5px auto;
+        text-align: center;
+    }
+
+    #logo {
+        box-sizing: border-box;
+        width: 80px;
+        height: 40px;
+        text-align: center;
+        background-color: blueviolet;
+        font-size: 1.7rem;
+        border: none;
+    }
+
+    #logo1 {
+        font-family: 'Mulish', sans-serif;
+        font-size: 1.7rem;
+    }
+
+    #search {
+        box-sizing: border-box;
+        width: 300px;
+        margin-top: 4px;
+        padding: 3px 5px;
+    }
+
+    #navbar {
+        grid-area: nav;
+    }
+
+    #body {
+        grid-area: bod;
+    }
+
+    #footer {
+        grid-area: ftr;
+        padding: 30px;
+        /* width: 95%; */
+    }
+
+    #asidel {
+        max-width: 18%;
+        text-align: left;
+    }
+
+    #disc {
+        color: rgb(82, 82, 125);
+    }
+
+    #blogs {
+        max-width: 58%;
+    }
+
+    #asider {
+        max-width: 20%;
+    }
+
+    .pages {
+        margin-top: 2px;
+        padding-left: 5px;
+    }
+
+    .tag {
+        box-sizing: border-box;
+        max-height: 42vh;
+        overflow-y: auto;
+    }
+
+    .tags {
+        margin: 10px;
+    }
+
+    .disc {
+
+        font-size: 1.2rem;
+    }
+
+    .order {
+        display: flex;
+        padding: 5px;
+        align-items: center;
+    }
+
+    .ord {
+        margin: 5px 10px;
+        /* justify-content: space-between; */
+    }
+
+    .head {
+        display: flex;
+        box-sizing: border-box;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px;
+    }
+
+    .header {
+        margin: 5px;
+        /* max-width: 35%; */
+        /* justify-content: space-between; */
+    }
+
+    .line1 {
+        margin: 15px 0px;
+        height: 2px;
+        background-color: black;
+    }
+
+    .t {
+        text-align: left;
+        margin: 5px;
+    }
+
+    .photo {
+        display: block;
+        margin: auto;
+        width: 100%;
+    }
+
+    .bottom {
+        display: inline-block;
+        margin: 3px 20px;
+    }
+
+    .link2 {
+        color: rgb(47, 47, 93);
+
+    }
+
+    .link2:hover {
+        text-decoration: underline;
+    }
+
+    .posts {
+        border: 3px solid white;
+        margin: 15px 0px;
+        box-shadow: 0px 7px 5px 0px #77dabe;
+        padding: 5px;
+    }
+
+    .works {
+        justify-content: space-between;
+        text-align: left;
+        font-size: 20px;
+        margin: 3px 15px;
+    }
+
+    .works:hover {
+        font-style: italic;
+        color: blueviolet;
+    }
+
+    /* .hov {
+        box-sizing: border-box;
+        border: 2px solid red;
+    } */
+
+    .hov:hover {
+        background-color: rgb(206, 172, 172);
+        border-radius: 10px;
+        /* color: blue !important; */
+    }
+
+    #bottom {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <div id="navbar" class="parts navb shad1">
+            <div id="logo" class="nav">
+                <a href="" target="" id="logo1"> BFA</a>
+            </div>
+            <div class="nav">
+                <input type="text" name="search" id="search" placeholder="Search...">
+            </div>
+            <div id="lin" class="nav link hov">
+                <a href="">Log In</a>
+            </div>
+            <!-- why color not working -->
+            <div id="sup" class="nav link hov">
+                <a href="">sign up</a>
+            </div>
+            <!-- why color not working -->
+        </div>
+        <div class="body " id="body">
+            <div id="asidel" class="parts shad2">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, ipsa.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, sunt!</p>
+                <div id="lin" class="nav link hov">
+                    <a href="">Log In</a>
+                </div>
+                <!-- why color not working -->
+                <div id="sup" class="nav link hov">
+                    <a href="">sign up</a>
+                </div>
+                <!-- why color not working -->
+                <div class="pages">
+                    <ul>
+                        <li><a href="" class="link"> about</a></li>
+                        <li><a href="" class="link">podcasts</a></li>
+                        <li><a href="" class="link">tags</a></li>
+                        <li><a href="" class="link">FAQ's</a></li>
+                        <li><a href="" class="link">contacts</a></li>
+                        <li><a href="" class="link">listings</a></li>
+                        <li><a href="" class="link">help</a></li>
+                        <li><a href="" class="link">discuss</a></li>
+                        <li><a href="" class="link">challange</a></li>
+                    </ul>
+                </div>
+                <h2>popular tags</h2>
+                <div class="tag">
+                    <div class="tags"><a href="" class="link">#gsgfgd</a></div>
+                    <div class="tags"><a href="" class="link">#gsgfgd</a></div>
+                    <div class="tags"><a href="" class="link">#gsgfgd</a></div>
+                    <div class="tags"><a href="" class="link">#gsgfgd</a></div>
+                    <div class="tags"><a href="" class="link">#gsgfgd</a></div>
+                    <div class="tags"><a href="" class="link">#gsgfgd</a></div>
+                    <div class="tags"><a href="" class="link">#gsgfgd</a></div>
+                    <div class="tags"><a href="" class="link">#gsgfgd</a></div>
+                    <div class="tags"><a href="" class="link">#gsgfgd</a></div>
+                    <div class="tags"><a href="" class="link">#gsgfgd</a></div>
+                    <div class="tags"><a href="" class="link">#gsgfgd</a></div>
+                    <div class="tags"><a href="" class="link">#gsgfgd</a></div>
+                    <div class="tags"><a href="" class="link">#gsgfgd</a></div>
+                    <div class="tags"><a href="" class="link">#gsgfgd</a></div>
+                    <div class="tags"><a href="" class="link">#gsgfgd</a></div>
+                    <div class="tags"><a href="" class="link">#gsgfgd</a></div>
+                    <div class="tags"><a href="" class="link">#gsgfgd</a></div>
+                    <div class="tags"><a href="" class="link">#gsgfgd</a></div>
+                    <div class="tags"><a href="" class="link">#gsgfgd</a></div>
+                    <div class="tags"><a href="" class="link">#gsgfgd</a></div>
+                    <div class="tags"><a href="" class="link">#gsgfgd</a></div>
+                </div>
+                <br>
+                <div class="line1"></div>
+                <div class="disc">
+                    <img src="discord.png" alt="img of discord logo" class="photo">
+                    <br>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, voluptas?<br>
+                    <a href="" class="link" id="disc">join our discord</a>
+                </div>
+                <div class="line1"></div>
+            </div>
+            <div id="blogs" class="parts shad2">
+                <div class="order ">
+                    <a href="" target="" class="ord link">relevent</a>
+                    <a href="" target="" class="ord link">latest</a>
+                    <a href="" target="" class="ord link">tags</a>
+                </div>
+                <div class="posts">
+                    <div> ipsum dolor sit amet consectetur adipisicing elit. Officiis consectetur distinctio tenetur ea,
+                        reprehenderit sunt nam a nostrum nobis explicabo excepturi error consequatur sed, mollitia
+                        dolorem
+                        labore unde harum beatae.
+                    </div><br>
+                    <a href="" class="works"><span><i class="material-icons">favorite</i></span>
+                        <sup>reaction</sup></a>
+                    <a href="" class="works"><span><i class="material-icons">comment</i></span>
+                        <sup>add comment</sup></a>
+                    <a href="" class="works"><span><i class="material-icons">bookmark</i></span></a>
+                </div>
+                <div class="posts">
+                    <div> ipsum dolor sit amet consectetur adipisicing elit. Officiis consectetur distinctio tenetur ea,
+                        reprehenderit sunt nam a nostrum nobis explicabo excepturi error consequatur sed, mollitia
+                        dolorem
+                        labore unde harum beatae.
+                    </div><br>
+                    <a href="" class="works"><span><i class="material-icons">favorite</i></span>
+                        <sup>reaction</sup></a>
+                    <a href="" class="works"><span><i class="material-icons">comment</i></span>
+                        <sup>add comment</sup></a>
+                    <a href="" class="works"><span><i class="material-icons">bookmark</i></span></a>
+                </div>
+                <div class="posts">
+                    <div> ipsum dolor sit amet consectetur adipisicing elit. Officiis consectetur distinctio tenetur ea,
+                        reprehenderit sunt nam a nostrum nobis explicabo excepturi error consequatur sed, mollitia
+                        dolorem
+                        labore unde harum beatae.
+                    </div><br>
+                    <a href="" class="works"><span><i class="material-icons">favorite</i></span>
+                        <sup>reaction</sup></a>
+                    <a href="" class="works"><span><i class="material-icons">comment</i></span>
+                        <sup>add comment</sup></a>
+                    <a href="" class="works"><span><i class="material-icons">bookmark</i></span></a>
+                </div>
+                <div class="posts">
+                    <div> ipsum dolor sit amet consectetur adipisicing elit. Officiis consectetur distinctio tenetur ea,
+                        reprehenderit sunt nam a nostrum nobis explicabo excepturi error consequatur sed, mollitia
+                        dolorem
+                        labore unde harum beatae.
+                    </div><br>
+                    <a href="" class="works"><span><i class="material-icons">favorite</i></span>
+                        <sup>reaction</sup></a>
+                    <a href="" class="works"><span><i class="material-icons">comment</i></span>
+                        <sup>add comment</sup></a>
+                    <a href="" class="works"><span><i class="material-icons">bookmark</i></span></a>
+                </div>
+
+            </div>
+            <div id="asider" class="parts shad2">
+                <div class="head">
+                    <h2 class="header">listings</h2>
+                    <a href="" class="header link">see all</a>
+                </div>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab, nisi ipsam. Temporibus soluta non,
+                expedita esse sapiente dolore nostrum aperiam ab accusantium doloribus deserunt assumenda odit,<br><br>
+                voluptate asperiores eaque excepturi! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti
+                impedit quam, voluptas repellendus natus architecto placeat at atque praesentium, obcaecati magnam
+                mollitia dignissimos corporis repudiandae dolores sint a id Lorem ipsum dolor, sit amet consectetur
+                adipisicing elit. Voluptas, ratione ipsam voluptatem facilis molestias reprehenderit eum iure
+                numquam,<br><br>
+                iste ex odit commodi nulla tempora maxime earum laboriosam dolore eos cum. Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Dolorum natus, praesentium vitae blanditiis quas aliquam expedita! Ratione
+                non porro numquam ipsam dignissimos debitis quo cumque voluptate facilis deserunt consectetur quia
+                nisi<br><br>
+                <div class="t">
+                    <h2>#help</h2>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde ad qui eos omnis atque ratione
+                    amet esse aperiam provident reprehenderit suscipit, vitae id beatae totam, sequi perferendis
+                    aliquid! Iure odit eaque vel libero pariatur?
+                </div>
+                <div class="t">
+                    <h2>#discuss</h2>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta fuga sunt iure dolorum, nesciunt
+                    beatae vero corrupti dolorem minus, ex consequuntur, eum minima. Obcaecati neque commodi atque
+                    deleniti sequi provident, error laboriosam accusantium ea.
+                </div>
+                <div class="t">
+                    <h2>#challange</h2>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae, soluta voluptatem aliquam
+                    molestias ea alias fugit tempora at. Consectetur eius id laboriosam quidem aperiam officia,
+                    temporibus officiis necessitatibus reiciendis dolorem.
+                </div>
+                <div class="line1"></div>
+            </div>
+        </div>
+        <div id="footer" class="parts shad1">
+            <div class="first">
+                <a href="" target="" class="link2 link"> BFA Community 👩‍💻👨‍💻</a>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, a? Iure, distinctio perferendis.
+                Atque quibusdam porro exercitationem rem consectetur aliquam?
+            </div>
+            <div class="second page">
+                <ul class="list">
+                    <li class="bottom"><a href="" target="" class="link2">hjlbbdg</a></li>
+                    <li class="bottom"><a href="" target="" class="link2">sgszzg</a></li>
+                    <li class="bottom"><a href="" target="" class="link2">fgzggg</a></li>
+                    <li class="bottom"><a href="" target="" class="link2">sgrszsg</a></li>
+                    <li class="bottom"><a href="" target="" class="link2">zdhfg</a></li>
+                    <li class="bottom"><a href="" target="" class="link2">dzhdzh</a></li>
+                    <li class="bottom"><a href="" target="" class="link2">zhzfh</a></li>
+                    <li class="bottom"><a href="" target="" class="link2">zdhzddzf</a></li>
+                    <li class="bottom"><a href="" target="" class="link2">zdhdhdz</a></li>
+                    <li class="bottom"><a href="" target="" class="link2">zdhhhfz</a></li>
+                </ul>
+            </div>
+            <div class="others">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ut aperiam corporis sed, cum, ipsa
+                error labore omnis accusantium facilis tempora? Architecto sit ad voluptatem iusto eius quidem quos
+                commodi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita mollitia odit iure, nemo, est
+                voluptatibus deleniti perspiciatis ipsa necessitatibus voluptates ipsam animi itaque. Eveniet similique
+                harum quo cupiditate, quia sapiente!
+            </div><br>
+            <div id="bottom"><a href="#top" target="" class="link2 link">go back to top</a></div>
+        </div>
+    </div>
+</body>
+
+</html>
